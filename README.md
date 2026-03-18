@@ -41,7 +41,7 @@ A collection of custom [Claude Code skills](https://docs.anthropic.com/en/docs/c
 Clone this repository and add it to your Claude Code skills path:
 
 ```bash
-git clone https://github.com/riccardo/claude-skills.git
+git clone https://github.com/riccardo-enr/claude-skills.git
 ```
 
 Then add the path to your Claude Code settings (`~/.claude/settings.json`):
@@ -80,7 +80,3 @@ claude-skills/
 ├── simplify/SKILL.md
 └── README.md
 ```
-
-## License
-
-MIT
