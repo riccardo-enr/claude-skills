@@ -25,6 +25,8 @@ A collection of custom [Claude Code skills](https://docs.anthropic.com/en/docs/c
 | Skill | Description |
 |---|---|
 | **simplify** | Reviews changed code for unnecessary complexity, duplication, and inefficiency. |
+| **clean-code** | Expert maintainability review for C++, CUDA, ROS 2, and Python. Checks changed files and all connected files for naming, coupling, idioms, and resource management. |
+| **codedoc** | Explains code by adding codedoc.nvim-compatible documentation blocks — prose, math, and design rationale — at module, class, and function level. |
 | **explicode-docs** | Adds [Explicode](https://github.com/riccardo/codedoc.nvim)-compatible documentation blocks to code files. |
 | **create-issue** | Creates GitHub issues using the `gh` CLI. |
 | **defuddle** | Extracts clean markdown from web pages using [Defuddle](https://github.com/nichochar/defuddle-cli), removing clutter to save tokens. |
@@ -77,6 +79,8 @@ claude-skills/
 ├── obsidian-markdown/
 │   ├── SKILL.md
 │   └── references/
+├── clean-code/SKILL.md
+├── codedoc/SKILL.md
 ├── simplify/SKILL.md
 └── README.md
 ```
