@@ -5,7 +5,7 @@ description: >
   Scans package structure, node design, QoS, naming, lifecycle, parameter handling,
   launch files, logging, and build configuration against official ROS 2 Jazzy documentation.
   Always fetches the latest docs from docs.ros.org before reviewing.
-allowed-tools: Bash(git diff*), Bash(git status*), Read, Glob, Grep, Agent, WebFetch(domain:docs.ros.org)
+allowed-tools: Bash(git diff*), Bash(git status*), Read, Glob, Grep, Agent, WebFetch(domain:docs.ros.org), mcp__obsidian__write_note, mcp__obsidian__read_note, mcp__obsidian__search_notes
 ---
 
 # ROS 2 Best-Practices Reviewer
@@ -95,31 +95,48 @@ Classify each finding:
 | **Medium** | Missing best practices: no component registration, no parameter descriptors, no lifecycle |
 | **Low** | Style issues: line length, file extensions, missing CHANGELOG |
 
-Output the report inline as markdown:
+Save the report to an Obsidian note using `mcp__obsidian__write_note`. Use the path `01_Phd/ros2-reviews/[package-name]-review.md`.
 
-```
-## ROS 2 Review — [package name(s)]
+The note must use this format:
+
+```markdown
+---
+topics:
+  - "[[ros2]]"
+  - "[[code-review]]"
+date: YYYY-MM-DD
+packages:
+  - [package names]
+findings:
+  critical: X
+  high: Y
+  medium: Z
+  low: W
+---
+
+# ROS 2 Review — [package name(s)]
 
 **Packages scanned**: N
 **Findings**: X Critical, Y High, Z Medium, W Low
 **Docs consulted**: [list of docs pages fetched]
 
-### Critical
+## Critical
 
 | File:Line | Finding | Suggestion | Source |
 |-----------|---------|------------|--------|
 | ... | ... | ... | [Doc name] |
 
-### High
+## High
 ...
 
-### Medium
+## Medium
 ...
 
-### Low
+## Low
 ...
 
-### Quick wins
+## Quick wins
+
 [Top 3-5 easiest improvements that would have the highest impact]
 ```
 
@@ -127,5 +144,7 @@ Every finding must include:
 - The exact file and line number
 - A concrete suggestion (not just "fix this")
 - The official doc that supports the finding
+
+After saving the note, print a short summary inline (total findings by severity + link to the Obsidian note path).
 
 $ARGUMENTS
